@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Список друзей, одолживших книги</title>
+</head>
+<body>
+    {% for friend in friends %}
+        <ul class="list-group">
+            <li class="list-group-item">
+                {{ friend.f_name }}
+                <ul class="list-group">
+                    {% for book in friend.borrowed_books.all %}
+                        <li class="list-group-item"> {{ book.title }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+    {% endfor %}
+</body>
+</html>

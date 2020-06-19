@@ -1,0 +1,14 @@
+Добро пожаловать в {{ title }}. <br>
+На данный момент в наличии {{ books|length }} книг:
+
+<table border="1">
+    {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.ISBN }}</td>
+            <td>{{ book.description }}</td>
+            <td>{{ book.year_release }}</td>
+            <td>{{ book.author.full_name }}</td>
+        </tr>
+    {% endfor %}
+</table>
